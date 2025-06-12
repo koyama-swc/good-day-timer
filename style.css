@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap');
+
+:root {
+  --ring-color: #323543; /* 濃いグレー */
+  --ring-bg:    #e7e8ec; /* 薄いグレー */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#app {
+  position: relative;
+  width: 360px;
+  height: 360px;
+}
+
+#center-img {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+svg#ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#bg-circle {
+  fill: none;
+  stroke: var(--ring-bg);
+  stroke-width: 4;
+}
+
+#progress-circle {
+  fill: none;
+  stroke: var(--ring-color);
+  stroke-width: 4;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-dasharray: 1068;      /* 2πr (r=170) ≒ 1068 */
+  stroke-dashoffset: 1068;      /* 最初は 100% 隠す */
+  transition: stroke-dashoffset linear 60s;
+}
+
+#done-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: #000;
+}
+
+#done-message.show {
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }

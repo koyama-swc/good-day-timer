@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json" />
+  <!-- 追加: アイコンを明示的に指定 -->
+  <link rel="icon" sizes="192x192" href="icons/icon-192.png">
+  <link rel="icon" sizes="512x512" href="icons/icon-512.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css" />
+  <title>今日も良い一日だったタイマー</title>
+</head>
+<body>
+  <main id="app">
+    <!-- 中央画像 -->
+    <img id="center-img" src="images/center.png" alt="今日も良い一日だったね" />
+
+    <!-- 円形タイマー (SVG) -->
+    <svg id="ring" width="360" height="360" viewBox="0 0 360 360">
+      <circle id="bg-circle" cx="180" cy="180" r="170" />
+      <circle id="progress-circle" cx="180" cy="180" r="170" />
+    </svg>
+
+    <!-- 終了メッセージ -->
+    <div id="done-message" hidden>また明日！</div>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
