@@ -56,13 +56,19 @@ svg#ring {
   transition: stroke-dashoffset linear 60s;
 }
 
-#done-message {
+#done-message,
+#mid-message {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.6rem;
   color: #000;
+  text-align: center;
+}
+
+#mid-message.fade-out {
+  animation: fadeOut 1s forwards;
 }
 
 #done-message.show {
@@ -70,3 +76,4 @@ svg#ring {
 }
 
 @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes fadeOut { from {opacity: 1;} to {opacity: 0;} }
